@@ -22,16 +22,16 @@ const ExpenseForm = () => {
     }
 
     const amountChangeHandler = (event) => {
-        setEnteredTitle({
+        setUserInput({
             ...userInput,
-            enteredTitle: event.target.value
+            enteredAmount: event.target.value
         })
     }
 
     const dateChangeHandler = (event) => {
-        setEnteredDate({
+        setUserInput({
             ...userInput,
-            enteredTitle: event.target.value
+            enteredDate: event.target.value
         })
     }
 
