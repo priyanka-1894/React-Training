@@ -25,19 +25,29 @@ function App() {
     },
   ];
 
-  /* JSX Syntax */
-  // return (
-  //   <div>
-  //     <h2>Let's get started!</h2>
-  //     <Expenses />
-  //   </div>
-  // );
+  const addExpenseHandler = (expense) => {
+    console.log('In App.js');
+    console.log(expense);
+  }
 
-  return React.createElement(
-    'div', 
-    {}, 
-    React.createElement(NewExpense, {} ), 
-    React.createElement(Expenses, { expenses: expenses }));
+  const filterExpense = (filter) => {
+    console.log(filter);
+  }
+
+  /* Previous w/o JSX Syntax */
+  // return React.createElement(
+  //   'div', 
+  //   {}, 
+  //   React.createElement(NewExpense, {} ), 
+  //   React.createElement(Expenses, { expenses: expenses }));
+
+  /* JSX Syntax */
+  return (
+    <div>
+      <NewExpense onAddExpense={ addExpenseHandler } />
+      <Expenses expenses={ expenses } filterExpense={ filterExpense } />
+    </div>
+  );
 }
 
 export default App;
